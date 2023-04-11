@@ -39,6 +39,22 @@ public class Calzado {
     public void setProducto(Producto producto) {
         this.producto = producto;
     }
+
+    public int valorVenta(){
+        int valorVenta = 0;
+        if(this.getDiaVenta().equalsIgnoreCase("Semana")){
+          //-15%
+            valorVenta = this.getProducto().getValorBase() - Math.round(this.getProducto().getValorBase()*15/100);
+        }else if(this.getDiaVenta().equalsIgnoreCase("Fin de semana")){
+          //+24%
+            valorVenta = (int) (this.getProducto().getValorBase() + Math.round(this.getProducto().getValorBase()*0.24));
+        }
+        return valorVenta;
+    }
+
+    public int impuestoIVA(){
+        return 0;
+    }
 }
 
 

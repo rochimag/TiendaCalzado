@@ -4,7 +4,7 @@ public class Producto {
     //atributos
 
 
-    private String codigo; //atrubutos public
+    public String codigo; //atrubutos public
     private int stock; // los atributos siempre en privado
     private int valorBase;
 
